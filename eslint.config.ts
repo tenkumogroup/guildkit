@@ -1,4 +1,5 @@
 import { core } from "@phanect/lint";
+import { astro } from "@phanect/lint-astro";
 import { nextjs } from "@phanect/lint-react";
 import { defineConfig, globalIgnores } from "eslint/config";
 
@@ -10,13 +11,14 @@ const configs = defineConfig([
 
   ...core,
   ...nextjs,
+  ...astro,
 
   {
     // Do not add `files: [ "*" ],` here.
 
     languageOptions: {
       parserOptions: {
-        projectService: true,
+        project: true,
         tsconfigRootDir: import.meta.dirname,
       },
     },
