@@ -100,3 +100,6 @@ vite.config.ts.timestamp-*
 
 # ESLint
 .eslintcache
+
+*storybook.log
+storybook-static
