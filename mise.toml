@@ -3,6 +3,9 @@
 [tools]
 node = { version = "24" }
 "npm:nushell" = "latest"
+python = "3"
+pipx = "latest"
+"pipx:git+https://github.com/github/spec-kit.git" = "latest"
 
 [tasks]
   [tasks.dev]
