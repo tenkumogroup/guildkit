@@ -1,3 +1,4 @@
+import { CenterBox } from "@/components/generic/CenterBox.tsx";
 import { JobList } from "@/components/JobList.tsx";
 import { prisma } from "@/lib/prisma.ts";
 
@@ -27,6 +28,8 @@ export default async function Index() {
   });
 
   return (
-    <JobList jobs={jobs} />
+    <CenterBox>
+      <JobList jobs={jobs} />
+    </CenterBox>
   );
 }
