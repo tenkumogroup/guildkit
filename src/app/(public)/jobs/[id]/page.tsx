@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Link } from "@/components/generic/ButtonLink.tsx";
+import { Tag } from "@/components/Tag.tsx";
 import { prisma } from "@/lib/prisma.ts";
 import type { ReactElement } from "react";
 
@@ -65,6 +66,11 @@ export default async function JobPage({ params }: Props): Promise<ReactElement> 
           {/* TODO Use user's locale in `toLocaleString()` */}
           Salary: {job.salary.toLocaleString("en-US")} {job.currency}/{job.salaryPer}
         </span>
+      </div>
+      <div className="mb-6 flex flex-wrap gap-2">
+        <Tag>TypeScript</Tag>
+        <Tag>Go</Tag>
+        <Tag>AWS</Tag>
       </div>
       <div className="inline-flex items-center gap-1.5 justify-end w-full mb-6 text-sm">
         <Image src="/vendor/octicons/clock.svg" alt="" width={16} height={16} />
