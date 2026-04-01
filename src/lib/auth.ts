@@ -1,4 +1,3 @@
-import { env } from "node:process";
 import { betterAuth } from "better-auth";
 import { prismaAdapter } from "better-auth/adapters/prisma";
 import { getOAuthState } from "better-auth/api";
@@ -11,10 +10,10 @@ import { prisma } from "@/lib/prisma.ts";
 import type { UserType } from "@/lib/prisma/enums.ts";
 
 if (
-  !env.GOOGLE_CLIENT_ID
-  || !env.GOOGLE_CLIENT_SECRET
-  || !env.GITHUB_CLIENT_ID
-  || !env.GITHUB_CLIENT_SECRET
+  !process.env.GOOGLE_CLIENT_ID
+  || !process.env.GOOGLE_CLIENT_SECRET
+  || !process.env.GITHUB_CLIENT_ID
+  || !process.env.GITHUB_CLIENT_SECRET
 ) {
   throw new Error(`Required environment variable(s) are not set.
     Did you set all of the { GOOGLE | GITHUB }_CLIENT_ID and {GOOGLE | GITHUB }_CLIENT_SECRET?`);
@@ -23,8 +22,8 @@ if (
 //
 // auth setup
 //
-const baseURL = env.BETTER_AUTH_URL ?? (
-  env.VERCEL_URL ? `https://${ env.VERCEL_URL }` // TODO Make it independent to Vercel
+const baseURL = process.env.BETTER_AUTH_URL ?? (
+  process.env.VERCEL_URL ? `https://${ process.env.VERCEL_URL }` // TODO Make it independent to Vercel
   : undefined
 );
 
@@ -169,13 +168,13 @@ export const auth = betterAuth({
   socialProviders: {
     google: {
       prompt: "select_account",
-      clientId: env.GOOGLE_CLIENT_ID,
-      clientSecret: env.GOOGLE_CLIENT_SECRET,
+      clientId: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
       ...oAuthConfigs,
     },
     github: {
-      clientId: env.GITHUB_CLIENT_ID,
-      clientSecret: env.GITHUB_CLIENT_SECRET,
+      clientId: process.env.GITHUB_CLIENT_ID,
+      clientSecret: process.env.GITHUB_CLIENT_SECRET,
       ...oAuthConfigs,
     },
   },
