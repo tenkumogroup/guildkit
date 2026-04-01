@@ -58,8 +58,8 @@ importers:
         specifier: latest
         version: 2025.11.29(eslint@9.39.4(jiti@2.6.1))(next@16.2.2(@babel/core@7.29.0)(@opentelemetry/api@1.9.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))
       '@phanect/utils':
-        specifier: ^2.0.0
-        version: 2.0.4
+        specifier: ^3.0.0
+        version: 3.0.0
       '@tailwindcss/postcss':
         specifier: ^4.1.17
         version: 4.2.2
@@ -1019,8 +1019,8 @@ packages:
       typescript:
         optional: true
 
-  '@phanect/utils@2.0.4':
-    resolution: {integrity: sha512-VI2C6nbwGlo0G1vHJwelgOex5u+NwPmTNLfSzxQaGel9JGBs5Fjvj9G+gVIsES05Te/mb1jYB1PEwPkYkJt12Q==}
+  '@phanect/utils@3.0.0':
+    resolution: {integrity: sha512-GbiyaN7FYwv4kgZ+22zAXQaxzUdTljFS3hmWHF0gP4PA8r2YbBgjN1r25Wic5jH42Od+pWCUhUP8Sn3oyRXQww==}
     engines: {node: ^20.11.0 || ^22.16.0 || >=24.0.0, pnpm: '>=10.x'}
 
   '@pkgr/core@0.2.9':
@@ -6393,7 +6393,7 @@ snapshots:
       - supports-color
       - vitest
 
-  '@phanect/utils@2.0.4': {}
+  '@phanect/utils@3.0.0': {}
 
   '@pkgr/core@0.2.9': {}
 
