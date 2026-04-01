@@ -300,6 +300,8 @@ const seed = async () => {
         // Lazy Hu Tao didn't write `about` ― to test layout when about is not written.
       },
     });
+  }, {
+    timeout: 10000, // 10 seconds
   });
 
   console.info("Database seeded successfully.");
