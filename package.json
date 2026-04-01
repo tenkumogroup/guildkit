@@ -2,7 +2,7 @@
   "name": "guildkit",
   "version": "0.0.1-prealpha",
   "author": "Jumpei Ogawa (https://phanective.org)",
-  "license": "SEE LICENSE IN LICENSE.md",
+  "license": "Apache-2.0",
   "type": "module",
   "dependencies": {
     "@aws-sdk/client-s3": "^3.1021.0",
