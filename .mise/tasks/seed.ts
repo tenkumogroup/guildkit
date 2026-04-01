@@ -12,8 +12,8 @@ const prisma = new PrismaClient({
 });
 
 const seed = async () => {
-  if (process.env.SERVER_ENV !== "development" && process.env.SERVER_ENV !== "demo" && process.env.SERVER_ENV !== "demo-preview") {
-    console.info("Seeding are only allowed when SERVER_ENV is development, demo, or demo-preview. Seeding skipped.");
+  if (process.env.SERVER_ENV !== "development" && process.env.SERVER_ENV !== "demo-production" && process.env.SERVER_ENV !== "demo-preview") {
+    console.info("Seeding are only allowed when SERVER_ENV is development, demo-production, or demo-preview. Seeding skipped.");
     return;
   }
 
