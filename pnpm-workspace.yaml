@@ -5,3 +5,7 @@ allowBuilds:
   prisma: true
   sharp: true
   unrs-resolver: true
+overrides:
+  # Temporary pin axios to avoid compromise
+  # https://zenn.dev/gunta/articles/0152eadf05d173
+  "axios": "1.14.0"
