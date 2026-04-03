@@ -5,6 +5,7 @@ allowBuilds:
   prisma: true
   sharp: true
   unrs-resolver: true
+minimumReleaseAge: 4320 # 72 hours
 overrides:
   # Temporary pin axios to avoid compromise
   # https://zenn.dev/gunta/articles/0152eadf05d173
