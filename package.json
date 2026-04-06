@@ -1,7 +1,14 @@
 {
   "name": "guildkit",
   "version": "0.0.1-prealpha",
-  "author": "Jumpei Ogawa (https://phanective.org)",
+  "author": {
+    "name": "Tenkumo, Inc.",
+    "url": "https://tenkumo.com"
+  },
+  "contributors": [{
+    "name": "Jumpei Ogawa",
+    "url": "https://phanective.org"
+  }],
   "license": "Apache-2.0",
   "type": "module",
   "dependencies": {
