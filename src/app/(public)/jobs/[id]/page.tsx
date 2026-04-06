@@ -81,7 +81,7 @@ export default async function JobPage({ params }: Props): Promise<ReactElement> 
 
       <section className="mt-8">
         <Link
-          href={job.applicationUrl}
+          href={`mailto:hello@example.com?subject=件名&body=URL%2F${ job.applicationUrl }`}
           theme="button-deep"
           className="px-6 py-3 font-semibold rounded-lg"
           prefetch
