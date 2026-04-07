@@ -1,12 +1,4 @@
 #
-# Project-specific
-#
-
-/prisma/models/currencies.prisma
-/src/intermediate/
-/src/lib/prisma/
-
-#
 # System
 #
 

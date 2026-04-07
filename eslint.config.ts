@@ -4,8 +4,8 @@ import { defineConfig, globalIgnores } from "eslint/config";
 
 const configs = defineConfig([
   globalIgnores([
-    "./src/intermediate/**",
-    "./src/lib/prisma/**",
+    "./projects/guildkit/src/intermediate/**",
+    "./projects/guildkit/src/lib/prisma/**",
   ]),
 
   ...core,
