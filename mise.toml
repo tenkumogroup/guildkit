@@ -1,0 +1,73 @@
+#:schema https://mise.jdx.dev/schema/mise.json
+
+experimental_monorepo_root = true
+
+[monorepo]
+config_roots = [ "projects/*" ]
+
+[tools]
+node = "24"
+"npm:nushell" = "latest"
+
+[tasks]
+  [tasks.dev]
+  run =[{ task = "//projects/...:dev" }]
+
+  [tasks.build]
+  run =[{ task = "//projects/...:build" }]
+
+  [tasks.test]
+  run =[{ task = "//projects/...:test" }]
+
+  [tasks.lint]
+  depends = [ "//projects/...:lint" ]
+  run = [
+    "tsc --noEmit",
+    "eslint",
+  ]
+
+  [tasks.fix]
+  depends = [ "//projects/...:fix" ]
+  run = "eslint --fix"
+
+  [tasks.db]
+  run = "psql --username=guildkit --dbname=guildkit --host=localhost --port=5432"
+
+  [tasks.clean]
+  depends = [ "clean:*" ]
+
+  [tasks.refresh]
+  depends = [ "clean" ]
+  run = [
+    "rm --force ./pnpm-lock.yaml",
+    "corepack enable",
+    "corepack up",
+    "pnpm install",
+    { task = "prepare" },
+  ]
+  raw = true # Required for the spinner and interactive UIs
+
+  [tasks.prepare]
+  run =[{ task = "//projects/...:prepare" }]
+
+  # TODO disabled until GA
+  # [tasks.publish]
+  # run =[{ task = "//projects/...:publish" }]
+
+[hooks]
+postinstall = [
+  "corepack enable",
+  "pnpm install --frozen-lockfile",
+  "mise run prepare",
+]
+
+[env]
+_.file = ".env"
+_.path = "./node_modules/.bin"
+
+[settings]
+jobs = 8
+
+# Required for hooks as of 2025.10
+# https://mise.jdx.dev/hooks.html
+experimental = true
