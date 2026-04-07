@@ -1,0 +1,45 @@
+{
+  "name": "%NAME%", // TODO
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [], // TODO
+  // TODO Update author if necessary
+  "author": {
+    "name": "Jumpei Ogawa",
+    "url": "https://phanective.org"
+  },
+  // TODO Choose one or another
+  "license": "Apache-2.0",
+  "license": "MIT",
+  "license": "CC0-1.0",
+  "license": "AGPL-3.0",
+  "license": "UNLICENSED",
+
+  "private": true, // TODO remove this if the project is a public npm package
+  "type": "module",
+  "main": "./dist/main.cjs",
+  "module": "./dist/main.js",
+  "types": "./dist/main.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/main.d.ts",
+        "default": "./dist/main.js"
+      },
+      "require": "./dist/main.cjs"
+    }
+  },
+  "dependencies": {},
+  // TODO The package version is probably outdated, so check with `pnpm outdated --recursive` and update them.
+  "devDependencies": {
+    "@phanect/configs": "latest",
+    "@types/node": "^24.0.3",
+    "jiti": "latest",
+    "tsdown": "0.16.6",
+    "typescript": "^5.6.2",
+    "vitest": "^4.0.4"
+  },
+  "engines": {
+    "node": "^20.11.0 || ^22.16.0 || >=24.0.0"
+  }
+}
