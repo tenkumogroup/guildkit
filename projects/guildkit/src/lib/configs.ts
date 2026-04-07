@@ -1,4 +1,4 @@
-import userConfig from "../../guildkit.config.ts";
+import userConfig from "../../../../guildkit.config.ts";
 import type { S3ClientConfig } from "@aws-sdk/client-s3";
 
 type BaseStorageConfig = S3ClientConfig & {

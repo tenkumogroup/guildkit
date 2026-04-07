@@ -1,4 +1,4 @@
-import type { GuildKitConfig } from "@/lib/configs.ts";
+import type { GuildKitConfig } from "./projects/guildkit/src/lib/configs.ts";
 
 // TODO make these items configurable by the GuildKit instance admins
 
