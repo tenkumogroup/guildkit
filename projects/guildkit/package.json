@@ -31,8 +31,6 @@
   "devDependencies": {
     "@better-auth/cli": "1.4.21",
     "@phanect/configs": "latest",
-    "@phanect/lint": "latest",
-    "@phanect/lint-react": "latest",
     "@phanect/utils": "^3.0.0",
     "@tailwindcss/postcss": "^4.1.17",
     "@types/node": "^24.10.0",
@@ -41,10 +39,8 @@
     "@types/react-dom": "^19",
     "dayjs": "^1.11.19",
     "dotenv": "^17.2.2",
-    "eslint": "^9.39.1",
     "fast-xml-parser": "^5.3.1",
     "jiti": "^2.4.2",
-    "neonctl": "^2.17.1",
     "postcss": "^8.4.23",
     "prisma": "^7.6.0",
     "tailwindcss": "^4.1.17",
@@ -53,6 +49,5 @@
   },
   "engines": {
     "node": "24.x"
-  },
-  "packageManager": "pnpm@10.33.0+sha512.10568bb4a6afb58c9eb3630da90cc9516417abebd3fabbe6739f0ae795728da1491e9db5a544c76ad8eb7570f5c4bb3d6c637b2cb41bfdcdb47fa823c8649319"
+  }
 }
