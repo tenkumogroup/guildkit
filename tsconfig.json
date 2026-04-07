@@ -1,0 +1,19 @@
+{
+  "extends": "@phanect/configs/ts/nodejs",
+
+  // Check by ESLint to ignore files under tmp/
+  "compilerOptions": {
+    "incremental": true
+  },
+
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.js",
+    "**/*.jsx"
+  ],
+  "exclude": [
+    "**/node_modules/**",
+    "projects/*/**" // These files should be lint by each project's mise tasks
+  ]
+}
