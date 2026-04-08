@@ -3,7 +3,6 @@ updates:
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
-      # Dependabot checks security updates daily regardless of this configuration
       interval: "weekly"
     assignees:
       - "phanect"
