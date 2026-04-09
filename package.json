@@ -1,6 +1,7 @@
 {
   "name": "guildkit",
   "version": "0.0.1-prealpha",
+  "description": "A CMS to build your own job platform",
   "author": {
     "name": "Tenkumo, Inc.",
     "url": "https://tenkumo.com"
