@@ -1,6 +1,6 @@
 # GuildKit
 
-A CMS for job search services
+A CMS to build your own job platform
 
 > [!CAUTION]
 > Currently WIP. Do not use in production.
