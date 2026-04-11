@@ -1,4 +1,3 @@
-import userConfig from "../../guildkit.config.ts";
 import type { S3ClientConfig } from "@aws-sdk/client-s3";
 
 type StorageConfig<PLATFORM extends "generic" | "aws" | "cloudflare" | "development" = "generic"> = {
@@ -17,9 +16,4 @@ export type GuildKitConfig = {
   siteName: string;
   storage: StorageConfig;
   maxLogoSizeMiB?: number;
-};
-
-export const config: Required<GuildKitConfig> = {
-  ...userConfig,
-  maxLogoSizeMiB: userConfig.maxLogoSizeMiB ?? 5,
 };
