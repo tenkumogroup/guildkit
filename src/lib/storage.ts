@@ -1,10 +1,10 @@
 import { PutObjectCommand, S3Client, type S3ClientConfig } from "@aws-sdk/client-s3";
 import { config } from "./configs.ts";
 
-const { platform: storagePlatform, bucket: configFileBucket, accountId: configFileAccountId, ...storageConfig } = config.storage;
+const { platform: storagePlatform, ...storageConfig } = config.storage;
 
-export const bucketName = configFileBucket ?? process.env.STORAGE_BUCKET ?? "guildkit";
-const cloudflareAccountId = configFileAccountId ?? process.env.CLOUDFLARE_ACCOUNT_ID;
+export const bucketName = process.env.STORAGE_BUCKET ?? "guildkit";
+const cloudflareAccountId = process.env.CLOUDFLARE_ACCOUNT_ID;
 
 if (storagePlatform === "cloudflare" && !cloudflareAccountId) {
   throw new Error("Cloudflare account ID is not configured for Cloudflare R2. Set `accountId` in your guildkit.config.ts or `CLOUDFLARE_ACCOUNT_ID` environment variable.");
