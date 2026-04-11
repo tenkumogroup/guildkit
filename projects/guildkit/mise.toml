@@ -1,13 +1,6 @@
 #:schema https://mise.jdx.dev/schema/mise.json
 
 [tasks]
-  [tasks.dev]
-  depends = [ "sync" ]
-  run = "next dev --inspect"
-
-  [tasks.start]
-  run = "next start"
-
   [tasks.build]
   depends = [ "sync" ]
   run = [

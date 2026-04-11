@@ -16,4 +16,7 @@ export type GuildKitConfig = {
   siteName: string;
   storage: StorageConfig;
   maxLogoSizeMiB?: number;
+  dev?: {
+    port?: number;
+  };
 };
