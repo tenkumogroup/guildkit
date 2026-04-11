@@ -1,5 +1,6 @@
-import { copyFile, mkdir, readdir, readFile, unlink } from "node:fs/promises";
-import { dirname, join, relative } from "node:path";
+import { existsSync as exists } from "node:fs";
+import { cp, readdir, unlink } from "node:fs/promises";
+import { join, relative } from "node:path";
 
 const walkDir = async (dirPath: string) => (await readdir(dirPath, {
   withFileTypes: true,
@@ -8,36 +9,23 @@ const walkDir = async (dirPath: string) => (await readdir(dirPath, {
   .map((file) => {
     const fullPath = join(file.parentPath || dirPath, file.name);
     const relPath = relative(dirPath, fullPath);
-    return { relPath, fullPath } as const;
+    return relPath;
   });
 
-export const syncDir = async (srcDirPath: string, destDirPath: string) => {
-  await mkdir(destDirPath, { recursive: true });
+export const syncDirs = async (srcDirPath: string, destDirPath: string) => {
+  // Delete files only exist in destDir
+  if (exists(destDirPath)) {
+    const srcFilePaths = await walkDir(srcDirPath);
+    const destFilePaths = await walkDir(destDirPath);
 
-  const srcFilePaths = await walkDir(srcDirPath);
-  const destFilePaths = await walkDir(destDirPath);
-
-  await Promise.all([
-    ...srcFilePaths.map(async ({ relPath, fullPath: srcFilePath }) => {
-      const destFilePath = join(destDirPath, relPath);
-
-      // 1. Overwrite files if they are different
-      if (destFilePaths.find(({ relPath: destRelPath }) => destRelPath === relPath)) {
-        const srcContent = await readFile(srcFilePath);
-        const destContent = await readFile(destFilePath);
-
-        if (!srcContent.equals(destContent)) {
-          await copyFile(srcFilePath, destFilePath);
+    await Promise.all(
+      destFilePaths.map(async (destFilePath) => {
+        if (!srcFilePaths.find((srcFilePath) => srcFilePath === destFilePath)) {
+          await unlink(join(destDirPath, destFilePath));
         }
-      } else { // 2. Copy files that only exist in srcPath
-        await mkdir(dirname(destFilePath), { recursive: true });
-        await copyFile(srcFilePath, destFilePath);
-      }
-    }),
-    ...destFilePaths.map(async ({ relPath, fullPath: destFilePath }) => {
-      if (!srcFilePaths.find(({ relPath: srcRelPath }) => srcRelPath === relPath)) {
-        await unlink(destFilePath);
-      }
-    }),
-  ]);
+      }),
+    );
+  }
+
+  return cp(srcDirPath, destDirPath, { recursive: true, force: true });
 };
