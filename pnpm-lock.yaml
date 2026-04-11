@@ -75,6 +75,12 @@ importers:
       better-auth:
         specifier: 1.5.6
         version: 1.5.6(6edc8d564210e9f29ef621942612eada)
+      c12:
+        specifier: 4.0.0-beta.4
+        version: 4.0.0-beta.4(chokidar@5.0.0)(dotenv@17.4.0)(giget@3.2.0)(jiti@2.6.1)
+      jsonc-parser:
+        specifier: ^3.3.1
+        version: 3.3.1
       next:
         specifier: ^16.2.2
         version: 16.2.2(@babel/core@7.29.0)(@opentelemetry/api@1.9.1)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
@@ -2851,6 +2857,26 @@ packages:
     peerDependencies:
       magicast: '*'
     peerDependenciesMeta:
+      magicast:
+        optional: true
+
+  c12@4.0.0-beta.4:
+    resolution: {integrity: sha512-gcWQAloC/SwGx4U7l3iQdalUQQLLXwYS1d3SqIwFj4UUrTXh8L9yGkBcA00B0gxELMwbxtsrt6VrAxtSgqZZoA==}
+    peerDependencies:
+      chokidar: ^5
+      dotenv: '*'
+      giget: '*'
+      jiti: '*'
+      magicast: '*'
+    peerDependenciesMeta:
+      chokidar:
+        optional: true
+      dotenv:
+        optional: true
+      giget:
+        optional: true
+      jiti:
+        optional: true
       magicast:
         optional: true
 
@@ -8757,6 +8783,20 @@ snapshots:
       perfect-debounce: 2.1.0
       pkg-types: 2.3.0
       rc9: 3.0.1
+
+  c12@4.0.0-beta.4(chokidar@5.0.0)(dotenv@17.4.0)(giget@3.2.0)(jiti@2.6.1):
+    dependencies:
+      confbox: 0.2.4
+      defu: 6.1.6
+      exsolve: 1.0.8
+      pathe: 2.0.3
+      pkg-types: 2.3.0
+      rc9: 3.0.1
+    optionalDependencies:
+      chokidar: 5.0.0
+      dotenv: 17.4.0
+      giget: 3.2.0
+      jiti: 2.6.1
 
   cac@7.0.0: {}
 
