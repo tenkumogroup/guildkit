@@ -10,7 +10,10 @@
 
   [tasks.build]
   depends = [ "sync" ]
-  run = "next build"
+  run = [
+    "tsdown",
+    "next build",
+  ]
   env = { NODE_ENV = "production" }
 
   [tasks.lint]
