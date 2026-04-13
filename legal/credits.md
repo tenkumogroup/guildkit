@@ -25,6 +25,12 @@ The thirdparty icons are stored in [public/vendor/](../public/vendor/).
 
 AI prompt docs are brought from the following projects:
 
+- [awesome-copilot](https://github.com/github/awesome-copilot)
+  - licensed under MIT
+  - by GitHub, Inc.
+- [prisma/skills](https://github.com/prisma/skills)
+  - licensed under MIT
+  - by Prisma
 - [PayloadCMS](https://github.com/payloadcms/payload)
   - licensed under MIT
   - by Payload CMS, Inc.
