@@ -1,4 +1,4 @@
-import type { GuildKitConfig } from "./projects/guildkit/src/lib/configs.ts";
+import type { GuildKitConfig } from "guildkit/config";
 
 // TODO make these items configurable by the GuildKit instance admins
 
@@ -10,6 +10,9 @@ const config: GuildKitConfig = {
     platform: "cloudflare",
   },
   maxLogoSizeMiB: 8,
+  dev: {
+    port: 3000,
+  },
 };
 
 export default config;

@@ -11,6 +11,10 @@ GuildKit is a Next.js application. It follows the directory structure of Next.js
 ```
 guildkit/
 ├── projects/                 # Monorepo root
+│   ├── demo/                 # Demo project configuration
+│   │   ├── guildkit.config.ts
+│   │   ├── package.json
+│   │   └── tsconfig.json
 │   └── guildkit/             # Main GuildKit application
 │       ├── prisma/           # Database schema and migrations
 │       │   ├── schema.prisma

@@ -1,0 +1,22 @@
+{
+  // TODO extract from @phanect/configs
+  "extends": "@phanect/configs/ts",
+
+  "compilerOptions": {
+    "lib": [
+      "esnext",
+      "dom",
+      "dom.iterable"
+    ]
+  },
+
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.js",
+    "**/*.jsx"
+  ],
+  "exclude": [
+    "**/node_modules/**"
+  ]
+}
