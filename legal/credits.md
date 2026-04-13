@@ -20,3 +20,11 @@ This project includes icons from:
   - [repository](https://github.com/tabler/tabler-icons)
 
 The thirdparty icons are stored in [public/vendor/](../public/vendor/).
+
+## Agent skills
+
+AI prompt docs are brought from the following projects:
+
+- [PayloadCMS](https://github.com/payloadcms/payload)
+  - licensed under MIT
+  - by Payload CMS, Inc.
