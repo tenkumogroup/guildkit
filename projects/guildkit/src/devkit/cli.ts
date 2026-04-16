@@ -22,7 +22,7 @@ const syncFiles = async () => {
 
   // Copy guildkit.config.*
   await writeFile(
-    join(intermediateDirPath, "guildkit.config.ts"),
+    join(intermediateDirPath, "src/lib/guildkit.config.ts"),
     `export const userConfigs = ${ JSON.stringify(config) } as const`
   );
 };

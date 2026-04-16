@@ -10,7 +10,6 @@
   run = "guildkit build"
 
   [tasks.lint]
-  depends = [ "sync" ]
   run = "tsc --noEmit"
 
 [env]
