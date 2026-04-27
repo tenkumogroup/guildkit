@@ -9,4 +9,13 @@ minimumReleaseAge: 4320 # 72 hours
 overrides:
   # Temporary pin axios to avoid compromise
   # https://zenn.dev/gunta/articles/0152eadf05d173
-  "axios": "1.14.0"
+  "axios": "1.15.0"
+minimumReleaseAgeExclude:
+  # Renovate security update: axios@1.15.0
+  - axios@1.15.0
+  # Renovate security update: fast-xml-parser@5.7.0
+  - fast-xml-parser@5.7.0
+  # Renovate security update: next@16.2.3
+  - next@16.2.3
+  # Renovate security update: postcss@8.5.10
+  - postcss@8.5.10
