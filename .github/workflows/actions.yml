@@ -34,8 +34,13 @@ jobs:
     steps:
       - name: Remove Podman which does not work well on GitHub Actions
         run: |
-          sudo systemctl stop docker
-          sudo apt-get remove -y docker
+          sudo systemctl disable --now docker.service docker.socket
+          sudo apt-get remove -y docker-ce docker-ce-cli
+          sudo apt-get install --reinstall podman
+          systemctl enable --now podman.service podman.socket
+          sudo systemctl restart podman podman.socket
+
+          sudo systemctl status podman.socket
 
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
       - uses: jdx/mise-action@1648a7812b9aeae629881980618f079932869151 # v4.0.1

@@ -3,5 +3,5 @@ def type [cmd] {
 }
 
 export def --wrapped container [ ...args ] {
-  podman ...$args
+  (podman ...$args)
 }
