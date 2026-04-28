@@ -6,7 +6,7 @@ on:
       - main
   push:
     branches:
-      - main
+      - "*"
   release:
     types:
       - published
@@ -39,7 +39,9 @@ jobs:
       BETTER_AUTH_SECRET: dummy_67Vl2BsxaiKFX41eYaGqvCHHQ4
     steps:
       - name: Remove Podman which does not work well on GitHub Actions
-        run: sudo apt-get remove -y podman
+        run: |
+          sudo systemctl stop docker
+          sudo apt-get remove -y docker
 
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
       - uses: jdx/mise-action@1648a7812b9aeae629881980618f079932869151 # v4.0.1
@@ -61,7 +63,7 @@ jobs:
       BETTER_AUTH_SECRET: dummy_67Vl2BsxaiKFX41eYaGqvCHHQ4
     steps:
       - name: Remove Podman which does not work well on GitHub Actions
-        run: sudo apt-get remove -y podman
+        run: sudo apt-get remove -y docker
 
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
       - uses: jdx/mise-action@1648a7812b9aeae629881980618f079932869151 # v4.0.1
@@ -83,7 +85,7 @@ jobs:
       SERVER_ENV: production
     steps:
       - name: Remove Podman which does not work well on GitHub Actions
-        run: sudo apt-get remove -y podman
+        run: sudo apt-get remove -y docker
 
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
       - uses: jdx/mise-action@1648a7812b9aeae629881980618f079932869151 # v4.0.1
